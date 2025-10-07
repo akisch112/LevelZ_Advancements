@@ -1,0 +1,123 @@
+ID,Namespace,Name,LevelZ_Skills,Description,Parent,Tab,XP_Value
+001,minecraft:story/root,Minecraft,All,Open your inventory for the first time.,,Minecraft,25
+002,minecraft:story/mine_stone,Stone Age,Mining,Mine stone with a pickaxe.,minecraft:story/root,Minecraft,50
+003,minecraft:story/upgrade_tools,Getting an Upgrade,Smithing,Craft a better pickaxe (stone or higher).,minecraft:story/mine_stone,Minecraft,75
+004,minecraft:story/smelt_iron,Acquire Hardware,Mining,Smelt iron ore into iron ingots.,minecraft:story/upgrade_tools,Minecraft,100
+005,minecraft:story/obtain_armor,Suit Up,Defense,Equip any piece of armor.,minecraft:story/smelt_iron,Minecraft,100
+006,minecraft:story/lava_bucket,Hot Stuff,Smithing,Fill a bucket with lava.,minecraft:story/smelt_iron,Minecraft,75
+007,minecraft:story/iron_tools,Isn't It Iron Pick,Mining,Craft an iron pickaxe.,minecraft:story/upgrade_tools,Minecraft,100
+008,minecraft:story/shield_block,"Not Today, Thank You",Defense,Block an attack with a shield.,minecraft:story/obtain_armor,Minecraft,125
+009,minecraft:story/form_obsidian,Ice Bucket Challenge,Mining,Form a block of obsidian (usually by pouring water over lava).,minecraft:story/mine_stone,Minecraft,50
+010,minecraft:story/mine_diamond,Diamonds!,Mining,Mine diamonds with an iron pickaxe or better.,minecraft:story/upgrade_tools,Minecraft,150
+011,minecraft:story/enter_nether,We Need to Go Deeper,Mining;Agility,Enter the Nether dimension.,minecraft:story/mine_diamond,Minecraft,200
+012,minecraft:story/diamonds_to_iron,Cover Me with Diamonds,Mining,Obtain a full set of diamond armor or tools.,minecraft:story/mine_diamond,Minecraft,300
+013,minecraft:adventure/enchant_item,Enchanter,Alchemy;Smithing,Enchant an item at an enchantment table.,minecraft:story/root,Minecraft,150
+014,minecraft:husbandry/cure_zombie_villager,Zombie Doctor,Alchemy,Cure a zombie villager using a potion and golden apple.,minecraft:story/root,Minecraft,250
+015,minecraft:adventure/spyglass,Eye Spy,Agility,Use a spyglass to zoom in on something.,minecraft:story/root,Minecraft,50
+016,minecraft:end/enter_end,The End?,Agility;Adventure,Enter the End dimension.,minecraft:story/enter_nether,Minecraft,350
+017,minecraft:adventure/return_to_sender,Return to Sender,Archery;Adventure,Deflect a ghast fireball back to the shooter so it kills it.,minecraft:story/enter_nether,Nether,300
+018,minecraft:nether/return_to_sender_root,Those Were the Days,Agility,Explore a Nether Ruin or similar (nether exploration).,minecraft:story/enter_nether,Nether,150
+019,minecraft:adventure/hidden_in_depths,Hidden in the Depths,Mining,Find Ancient Debris or nether resources.,minecraft:story/enter_nether,Nether,300
+020,minecraft:nether/subspace_bubble,Subspace Bubble,Mining,Collect crys. or use nether-related block (nether-related progression).,minecraft:story/enter_nether,Nether,200
+021,minecraft:nether/fortress,A Terrible Fortress,Defense;Adventure,Find a Nether Fortress.,minecraft:story/enter_nether,Nether,250
+022,minecraft:nether/ghast,Who is Cutting Onions?,Alchemy;Adventure,Encounter or kill a ghast or similar nether mob.,minecraft:story/enter_nether,Nether,200
+023,minecraft:nether/oh_shiny,Oh Shiny,Mining,Find ancient debris or rare netherite resources.,minecraft:story/enter_nether,Nether,300
+024,minecraft:adventure/this_boat_has_legs,This Boat Has Legs,Agility,Ride a strider or use a boat-like entity.,minecraft:story/enter_nether,Nether,150
+025,minecraft:adventure/uneasy_alliance,Uneasy Alliance,Trade,Negotiate or interact beneficially with piglins (barter).,minecraft:story/enter_nether,Nether,200
+026,minecraft:adventure/war_pigs,War Pigs,Strength,Ride a pig or kill hoglins; nether combat challenge.,minecraft:story/enter_nether,Nether,200
+027,minecraft:adventure/country_lode_take_me_home,"Country Lode, Take Me Home",Agility,Explore biomes and find nether landmarks.,minecraft:story/enter_nether,Nether,150
+028,minecraft:nether/cover_me_in_debris,Cover Me in Debris,Mining,Obtain an item made of netherite or debris.,minecraft:nether/oh_shiny,Nether,300
+029,minecraft:adventure/spooky_scary_skeleton,Spooky Scary Skeleton,Strength,Kill a skeleton or related mob under special conditions.,minecraft:story/enter_nether,Nether,200
+030,minecraft:nether/into_fire,Into Fire,Alchemy,Obtain blaze rod or fight blaze.,minecraft:story/enter_nether,Nether,250
+031,minecraft:nether/not_quite_nine_lives,"Not Quite ""Nine"" Lives",Health,Respawn using Totem of Undying or similar mechanics.,minecraft:story/root,Nether,500
+032,minecraft:nether/feels_like_home,Feels Like Home,Agility,Establish a respawn anchor or similar.,minecraft:story/enter_nether,Nether,150
+033,minecraft:nether/hot_tourist_destinations,Hot Tourist Destinations,Agility,Visit multiple nether biomes or landmarks.,minecraft:story/enter_nether,Nether,200
+034,minecraft:nether/withering_heights,Withering Heights,Strength,Encounter or defeat wither related activities.,minecraft:story/enter_nether,Nether,400
+035,minecraft:nether/local_brewery,Local Brewery,Alchemy,Brew a potion using nether ingredients.,minecraft:nether/into_fire,Nether,200
+036,minecraft:nether/bring_home_beacon,Bring Home the Beacon,Mining;Smithing,Create a beacon and bring one home from the nether/end.,minecraft:story/mine_diamond,Nether,400
+037,minecraft:nether/a_furious_cocktail,A Furious Cocktail,Alchemy,Craft or consume a complex potion mixture.,minecraft:nether/local_brewery,Nether,250
+038,minecraft:nether/beaconator,Beaconator,Mining,Build a full beacon pyramid and activate it.,minecraft:nether/bring_home_beacon,Nether,500
+039,minecraft:nether/how_did_we_get_here,How Did We Get Here?,Alchemy,Obtain every potion effect at once (complex).,minecraft:nether/local_brewery,Nether,800
+040,minecraft:end/the_end_again,The End... Again...,Agility,Return to the End through an End gateway.,minecraft:end/enter_end,The End,300
+041,minecraft:end/you_need_a_mint,You Need a Mint,Luck,Collect a rare end drop or elytra related reward.,minecraft:end/the_end_again,The End,200
+042,minecraft:end/city_at_the_end,The City at the End of the Game,Agility;Mining,Find an End City and loot it.,minecraft:end/enter_end,The End,400
+043,minecraft:end/sky_is_the_limit,Sky's the Limit,Agility,Use elytra to fly to a great height or distance.,minecraft:end/enter_end,The End,300
+044,minecraft:end/great_view_from_up_here,Great View From Up Here,Agility,Use a spyglass or elytra to view distant locations from high up.,minecraft:end/enter_end,The End,150
+045,minecraft:adventure/voluntary_exile,Voluntary Exile,Agility,Leave spawn and travel far from origin.,minecraft:story/root,Adventure,50
+046,minecraft:adventure/is_it_a_bird,Is It a Bird?,Agility,Use elytra or glide with a falling mechanic.,minecraft:adventure/voluntary_exile,Adventure,150
+047,minecraft:adventure/monster_hunter,Monster Hunter,Strength,Kill a hostile mob.,minecraft:story/root,Adventure,50
+048,minecraft:adventure/what_a_deal,What a Deal!,Trade,Perform a villager trade.,minecraft:story/root,Adventure,50
+049,minecraft:adventure/sticky_situation,Sticky Situation,Agility,Use slime blocks or honey block mechanics effectively.,minecraft:story/root,Adventure,75
+050,minecraft:adventure/ol_betsy,Ol' Betsy,Archery,Use a crossbow to shoot a mob or target.,minecraft:adventure/monster_hunter,Adventure,100
+051,minecraft:adventure/surge_protector,Surge Protector,Agility,Use redstone or shields to protect from lightning or redstone events.,minecraft:story/root,Adventure,100
+052,minecraft:adventure/caves_and_cliffs,Caves & Cliffs,Agility;Mining,Explore a deep cave system or cliff area.,minecraft:adventure/voluntary_exile,Adventure,100
+053,minecraft:adventure/sneak_100,Sneak 100,Agility,Sneak behind mobs or players for a specific distance/time.,minecraft:story/root,Adventure,75
+054,minecraft:adventure/sweet_dreams,Sweet Dreams,Health,Sleep in a bed without being attacked; safety/rest mechanics.,minecraft:story/root,Adventure,50
+055,minecraft:adventure/hero_of_the_village,Hero of the Village,Luck;Trade,Complete a village raid or help villagers successfully.,minecraft:adventure/what_a_deal,Adventure,200
+056,minecraft:adventure/is_it_a_balloon,Is It a Balloon?,Agility,Use a lead or ride a balloon-like entity (piglin bartering context).,minecraft:story/root,Adventure,75
+057,minecraft:adventure/a_throwaway_joke,A Throwaway Joke,Agility,Throw away garbage or toss an item to trigger behavior.,minecraft:story/root,Adventure,25
+058,minecraft:adventure/it_spreads,It Spreads,Agility,Spread a block or influence (like spreading roots or spreading a block).,minecraft:story/root,Adventure,75
+059,minecraft:adventure/take_aim,Take Aim,Archery,Use a bow to hit a moving target or mob.,minecraft:adventure/ol_betsy,Adventure,100
+060,minecraft:adventure/monsters_hunted,Monsters Hunted,Strength,Kill multiple types of hostile mobs.,minecraft:adventure/monster_hunter,Adventure,150
+061,minecraft:adventure/postmortal,Postmortal,Health,Use totems or special mechanics to survive death effects.,minecraft:story/root,Adventure,300
+062,minecraft:adventure/hired_help,Hired Help,Trade,Hire or interact with a wandering trader or villager effectively.,minecraft:adventure/what_a_deal,Adventure,100
+063,minecraft:adventure/star_trader,Star Trader,Trade,Trade with a special villager or complete high-value trades.,minecraft:adventure/hired_help,Adventure,200
+064,minecraft:adventure/two_birds_one_arrow,Two Birds One Arrow,Archery,Hit two mobs with one arrow or crossbow shot.,minecraft:adventure/take_aim,Adventure,150
+065,minecraft:adventure/whos_the_pillager_now,Who's the Pillager Now,Strength;Defense,Defeat a raid captain or pillager leader.,minecraft:adventure/monsters_hunted,Adventure,250
+066,minecraft:adventure/arbalistic,Arbalistic,Archery,Use a crossbow to hit a bullseye or target precisely.,minecraft:adventure/ol_betsy,Adventure,150
+067,minecraft:adventure/adventuring_time,Adventuring Time,Agility,Explore all biomes or significant exploration task.,minecraft:adventure/voluntary_exile,Adventure,200
+068,minecraft:adventure/sound_of_music,Sound of Music,Agility,Play a music disc in a jukebox in a specific biome.,minecraft:story/root,Adventure,75
+069,minecraft:adventure/light_as_a_rabbit,Light as a Rabbit,Agility,Reduce fall damage or use jump/potion to negate damage.,minecraft:story/root,Adventure,100
+070,minecraft:adventure/is_it_a_plane,Is It a Plane?,Agility,Glide or fly using elytra over a long distance.,minecraft:adventure/is_it_a_bird,Adventure,200
+071,minecraft:adventure/very_very_frightening,Very Very Frightening,Strength,Perform a powerful melee action or use trident to defeat foes.,minecraft:adventure/monsters_hunted,Adventure,300
+072,minecraft:adventure/sniper_duel,Sniper Duel,Archery,Kill a skeleton or mob from long range with a bow or crossbow.,minecraft:adventure/take_aim,Adventure,150
+073,minecraft:adventure/bullseye,Bullseye,Archery,Hit the target's bullseye with an arrow or trident.,minecraft:adventure/take_aim,Adventure,150
+074,minecraft:husbandry/bee_our_guest,Bee Our Guest,Farming,Use a campfire to harvest honey without angering bees.,minecraft:story/root,Husbandry,75
+075,minecraft:husbandry/the_parrots_and_the_bats,The Parrots and the Bats,Farming,Tame or breed parrots and bats-related activities.,minecraft:story/root,Husbandry,50
+076,minecraft:husbandry/youve_got_a_friend_in_me,You've Got a Friend in Me,Farming,Tame an animal companion.,minecraft:story/root,Husbandry,50
+077,minecraft:husbandry/whatever_floats_your_goat,Whatever Floats Your Goat,Farming,Ride a goat in a boat or perform goat-boat interaction.,minecraft:story/root,Husbandry,100
+078,minecraft:husbandry/best_friends_forever,Best Friends Forever,Farming,Breed animals and create lasting bonds (breed multiple species).,minecraft:husbandry/youve_got_a_friend_in_me,Husbandry,150
+079,minecraft:husbandry/glow_and_behold,Glow and Behold!,Farming,Obtain froglight or similar frog drops.,minecraft:story/root,Husbandry,150
+080,minecraft:husbandry/fishy_business,Fishy Business,Farming;Luck,Catch fish using a fishing rod.,minecraft:story/root,Husbandry,75
+081,minecraft:husbandry/total_beelocation,Total Beelocation,Farming,Relocate beehives successfully or breed bees.,minecraft:husbandry/bee_our_guest,Husbandry,100
+082,minecraft:husbandry/bukkit_bukkit,Bukkit Bukkit,Farming,Use bucket interactions to capture fish or mobs.,minecraft:story/root,Husbandry,75
+083,minecraft:husbandry/a_seedy_place,A Seedy Place,Farming,Plant seeds and grow crops.,minecraft:story/root,Husbandry,50
+084,minecraft:husbandry/wax_on,Wax On,Farming;Smithing,Apply wax to a copper block to prevent oxidation (or similar).,minecraft:story/root,Husbandry,75
+085,minecraft:husbandry/two_by_two,Two by Two,Farming,Breed a pair of animals.,minecraft:husbandry/youve_got_a_friend_in_me,Husbandry,100
+086,minecraft:husbandry/birthday_song,Birthday Song,Farming,Trigger a birthday or age-related mechanic for mobs.,minecraft:story/root,Husbandry,50
+087,minecraft:husbandry/complete_catalogue,A Complete Catalogue,Farming;Luck,Catch every fish or complete a fish catalogue.,minecraft:husbandry/fishy_business,Husbandry,200
+088,minecraft:husbandry/tactical_fishing,Tactical Fishing,Farming;Luck,Use fishing tactics to catch special items.,minecraft:husbandry/fishy_business,Husbandry,150
+089,minecraft:husbandry/when_the_squad_hops_into_town,When the Squad Hops into Town,Farming,Lead a group of animals or frogs to a location.,minecraft:husbandry/youve_got_a_friend_in_me,Husbandry,150
+090,minecraft:husbandry/balanced_diet,A Balanced Diet,Stamina;Farming,Eat a variety of foods to gain benefits.,minecraft:husbandry/a_seedy_place,Husbandry,125
+091,minecraft:husbandry/serious_dedication,Serious Dedication,Farming,Spend time tending to animals or crops (long-term care).,minecraft:husbandry/youve_got_a_friend_in_me,Husbandry,200
+092,minecraft:husbandry/wax_off,Wax Off,Stamina;Smithing,Remove wax from a copper block or similar maintenance.,minecraft:husbandry/wax_on,Husbandry,75
+093,minecraft:husbandry/the_cutest_predator,The Cutest Predator,Farming,"Use a mob as a pet to capture another small mob (e.g., fox activity).",minecraft:husbandry/youve_got_a_friend_in_me,Husbandry,150
+094,minecraft:husbandry/with_our_powers_combined,With Our Powers Combined!,Farming,Combine mob abilities or breed special offspring.,minecraft:husbandry/best_friends_forever,Husbandry,200
+095,minecraft:husbandry/healing_power_of_friendship,The Healing Power of Friendship!,Farming,Heal mobs or use animal interactions to restore health.,minecraft:husbandry/youve_got_a_friend_in_me,Husbandry,150
+096,minecraft:husbandry/the_power_of_books,The Power of Books,Farming;Smithing,Use books or lecterns to trigger special behaviors or trade benefits.,minecraft:story/root,Husbandry,100
+097,minecraft:husbandry/crafting_a_new_look,Crafting a New Look,Farming;Smithing,Change mob appearance using crafting or dyes.,minecraft:story/root,Husbandry,75
+098,minecraft:husbandry/respecting_the_remnants,Respecting the Remnants,Farming,Interact with ancient remains like pottery shards or archaeological finds.,minecraft:story/root,Husbandry,150
+099,minecraft:husbandry/smithing_with_style,Smithing with Style,Smithing,Trim or customize armor using smithing templates.,minecraft:story/root,Husbandry,200
+100,minecraft:husbandry/careful_restoration,Careful Restoration,Smithing,Restore an item or pot using specialized tools.,minecraft:husbandry/smithing_with_style,Husbandry,150
+101,minecraft:husbandry/smells_interesting,Smells Interesting,Smithing,Use scented items or interact with mobs via smell mechanics.,minecraft:story/root,Husbandry,75
+102,minecraft:husbandry/little_sniffs,Little Sniffs,Smithing,Trigger sniffing mechanics or creature detection behaviors.,minecraft:story/root,Husbandry,50
+103,minecraft:husbandry/planting_the_past,Planting the Past,Farming,Plant archaeological finds or ancient seeds to grow crops.,minecraft:husbandry/respecting_the_remnants,Husbandry,150
+104,minecraft:adventure/salvage_sherd,Respecting the Remnants (Archaeology),Smithing;Archaeology,Use a brush to salvage pottery shards at an archaeological site.,minecraft:story/root,Adventure,100
+105,minecraft:adventure/trim_with_all_exclusive_armor_patterns,Trim with All Exclusive Armor Patterns,Smithing,Apply all exclusive armor trims to unlock patterns.,minecraft:husbandry/smithing_with_style,Adventure,250
+106,minecraft:adventure/trim_with_any_armor_pattern,Trim with Any Armor Pattern,Smithing,Trim armor with any pattern using smithing templates.,minecraft:husbandry/smithing_with_style,Adventure,150
+107,minecraft:adventure/mine_stone,Mine Stone (duplicate),Mining,(duplicate placeholder),minecraft:story/mine_stone,Adventure,50
+108,minecraft:story/smelt_iron_duplicate,Smelt Iron (duplicate),Mining,(duplicate placeholder),minecraft:story/smelt_iron,Minecraft,100
+109,minecraft:adventure/mine_diamond_duplicate,Mine Diamond (duplicate),Mining,(duplicate placeholder),minecraft:story/mine_diamond,Adventure,150
+110,minecraft:adventure/create_beacon,Create Beacon,Mining;Smithing,Create and activate a beacon.,minecraft:story/mine_diamond,Adventure,500
+111,minecraft:adventure/create_full_beacon,Create Full Beacon,Mining;Smithing,Create a full beacon pyramid with all layers.,minecraft:adventure/create_beacon,Adventure,800
+112,minecraft:adventure/kill_dragon,Kill the Dragon,Strength;Agility,Defeat the Ender Dragon.,minecraft:end/enter_end,The End,1000
+113,minecraft:adventure/respawn_dragon,Respawn Dragon,Alchemy;Adventure,Respawn the Ender Dragon using end crystals and fight again.,minecraft:adventure/kill_dragon,The End,800
+114,minecraft:adventure/elytra,Elytra,Agility,Obtain and use elytra from an End City.,minecraft:end/city_at_the_end,The End,300
+115,minecraft:adventure/follow_ender_eye,Follow the Ender Eye,Agility,Follow an eye of ender to a stronghold.,minecraft:story/enter_nether,Adventure,150
+116,minecraft:adventure/enter_end_gateway,Enter End Gateway,Agility;Adventure,Use an End Gateway to travel to an End island.,minecraft:end/enter_end,The End,250
+117,minecraft:adventure/kill_wither,Summon Wither,Strength;Alchemy,Summon and defeat the Wither boss.,minecraft:story/mine_diamond,Adventure,900
+118,minecraft:adventure/get_wither_skull,Get Wither Skull,Mining;Adventure,Obtain a wither skeleton skull.,minecraft:adventure/kill_wither,Adventure,400
+119,minecraft:adventure/dragon_egg,Dragon Egg,Mining;Adventure,Obtain the dragon egg after defeating the Ender Dragon.,minecraft:adventure/kill_dragon,The End,500
+120,minecraft:adventure/spyglass_at_dragon,Spyglass at Dragon,Agility;Archery,Use a spyglass to look at the Ender Dragon.,minecraft:adventure/kill_dragon,Adventure,150
+121,minecraft:adventure/spyglass_at_ghast,Spyglass at Ghast,Agility;Archery,Use a spyglass to look at a ghast in the Nether.,minecraft:adventure/return_to_sender,Nether,100
+122,minecraft:adventure/spyglass_at_parrot,Spyglass at Parrot,Agility;Archery,Use a spyglass to look at a parrot or mob.,minecraft:adventure/sound_of_music,Adventure,75
