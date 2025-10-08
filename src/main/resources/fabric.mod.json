@@ -1,41 +1,31 @@
 {
-	"schemaVersion": 1,
-	"id": "levelz_advancements",
-	"version": "${version}",
-	"name": "LevelZ Advancements",
-	"description": "Adds advancements that track and reward LevelZ progression milestones.",
-	"authors": [
-    "Alex Kisch"
-	],
-	"contact": {
+  "schemaVersion": 1,
+  "id": "levelz_advancements",
+  "version": "${version}",
+  "name": "LevelZ Advancements",
+  "description": "Adds advancements that track and reward LevelZ progression milestones.",
+  "authors": ["Alex Kisch"],
+  "contact": {
     "homepage": "https://github.com/alexkisch/level-z---Advancements",
     "sources": "https://github.com/alexkisch/level-z---Advancements"
-	},
-	"license": "MIT",
-	"icon": "assets/levelz_advancements/icon.png",
-	"environment": "*",
-
-	"entrypoints": {
+  },
+  "license": "MIT",
+  "icon": "assets/levelz_advancements/icon.png",
+  "environment": "*",
+  "entrypoints": {
     "main": [
-		"com.alexkisch.levelz.LevelZAdvancements"
+      "com.alexkisch.levelz.LevelZAdvancements"
     ],
     "client": [
-		"com.alexkisch.levelz.LevelZAdvancementsClient"
+      "com.alexkisch.levelz.LevelZAdvancementsClient"
     ]
-	},
-
-	"mixins": [
-    "levelz_advancements.mixins.json",
-    {
-		"config": "levelz_advancements.client.mixins.json",
-		"environment": "client"
-    }
-	],
-
-	"depends": {
+  },
+  "depends": {
     "fabricloader": ">=0.14.0",
     "fabric": "*",
     "minecraft": ">=1.20.1 <1.20.2",
-    "java": ">=17"
-	}
+    "java": ">=17",
+    "levelz": "*",
+    "libz": "*"
+  }
 }
