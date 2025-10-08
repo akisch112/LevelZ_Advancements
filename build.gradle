@@ -1,65 +1,67 @@
 plugins {
-    id 'fabric-loom' version '1.6-SNAPSHOT'
+    id 'fabric-loom' version '1.6.12'
     id 'maven-publish'
 }
 
-version = project.mod_version
 group = project.maven_group
-
-base {
-    archivesName = project.archives_base_name
-}
+version = project.mod_version
+archivesBaseName = project.mod_id
 
 repositories {
-    // Loom adds the required repositories automatically.
+    maven { url 'https://maven.fabricmc.net/' }
+    maven { url 'https://maven.architectury.dev/' }
+    maven { url 'https://maven.shedaniel.me/' }
+    mavenCentral()
+}
+
+dependencies {
+    // Core Fabric
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+    // Automatically include all local JARs in /libs
+    def localLibs = fileTree(dir: "libs", include: ["*.jar"])
+    println "\n🧩 Detected ${localLibs.files.size()} local JAR(s) in /libs:"
+    localLibs.files.each { println "   → ${it.name}" }
+
+    localLibs.each { jar ->
+        modImplementation files(jar)
+    }
 }
 
 loom {
     splitEnvironmentSourceSets()
 
-    mods {
-        "levelz_advancements" {
-            sourceSet sourceSets.main
-            sourceSet sourceSets.client
+    runs {
+        client {
+            client()
+            setConfigName("Fabric Client")
+            ideConfigGenerated(true)
+        }
+        server {
+            server()
+            setConfigName("Fabric Server")
+            ideConfigGenerated(true)
         }
     }
 }
 
-dependencies {
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-}
-
-processResources {
-    inputs.property "version", project.version
-    filesMatching("fabric.mod.json") {
-        expand "version": project.version
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(project.java_version.toInteger())
     }
+    withSourcesJar()
 }
 
 tasks.withType(JavaCompile).configureEach {
-    it.options.release = 17
-}
-
-java {
-    withSourcesJar()
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    it.options.encoding = "UTF-8"
+    it.options.release = project.java_version.toInteger()
 }
 
 jar {
     from("LICENSE") {
-        rename { "${it}_${project.base.archivesName.get()}" }
-    }
-}
-
-publishing {
-    publications {
-        create("mavenJava", MavenPublication) {
-            artifactId = project.archives_base_name
-            from components.java
-        }
+        rename { "${it}_${project.archivesBaseName}" }
     }
 }
