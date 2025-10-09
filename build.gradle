@@ -60,6 +60,13 @@ tasks.withType(JavaCompile).configureEach {
     it.options.release = project.java_version.toInteger()
 }
 
+processResources {
+    inputs.property "version", project.version
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
 jar {
     from("LICENSE") {
         rename { "${it}_${project.archivesBaseName}" }
