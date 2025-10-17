@@ -1,31 +1,27 @@
 {
   "schemaVersion": 1,
   "id": "levelz_advancements",
-  "version": "${version}",
+  "version": "1.0.0",
   "name": "LevelZ Advancements",
-  "description": "Adds advancements that track and reward LevelZ progression milestones.",
+  "description": "Integrates LevelZ progression with Minecraft advancements.",
   "authors": ["Alex Kisch"],
   "contact": {
-    "homepage": "https://github.com/alexkisch/level-z---Advancements",
     "sources": "https://github.com/alexkisch/level-z---Advancements"
   },
   "license": "MIT",
-  "icon": "assets/levelz_advancements/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.alexkisch.levelz.LevelZAdvancements"
-    ],
-    "client": [
-      "com.alexkisch.levelz.LevelZAdvancementsClient"
+      "com.alexkisch.levelz_advancements.LevelZAdvancements"
     ]
   },
   "depends": {
-    "fabricloader": ">=0.14.0",
-    "fabric": "*",
-    "minecraft": ">=1.20.1 <1.20.2",
-    "java": ">=17",
-    "levelz": "*",
-    "libz": "*"
+    "fabricloader": ">=0.15.11",
+    "fabric-api": ">=0.90.7+1.20.1",
+    "levelz": ">=1.4.13",
+    "libz": ">=1.0.3",
+    "architectury": ">=9.2.14",
+    "cloth-config": ">=11.1.118",
+    "minecraft": "1.20.1"
   }
 }

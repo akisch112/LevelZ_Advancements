@@ -3,72 +3,52 @@ plugins {
     id 'maven-publish'
 }
 
-group = project.maven_group
-version = project.mod_version
-archivesBaseName = project.mod_id
+group = 'com.alexkisch.levelz_advancements'
+version = '1.0.0'
+archivesBaseName = 'levelz_advancements'
 
 repositories {
-    maven { url 'https://maven.fabricmc.net/' }
-    maven { url 'https://maven.architectury.dev/' }
-    maven { url 'https://maven.shedaniel.me/' }
     mavenCentral()
-}
+    maven { url "https://maven.fabricmc.net/" }
+    maven { url "https://api.modrinth.com/maven" }
 
-dependencies {
-    // Core Fabric
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings loom.officialMojangMappings()
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-
-    // Automatically include all local JARs in /libs
-    def localLibs = fileTree(dir: "libs", include: ["*.jar"])
-    println "\n🧩 Detected ${localLibs.files.size()} local JAR(s) in /libs:"
-    localLibs.files.each { println "   → ${it.name}" }
-
-    localLibs.each { jar ->
-        modImplementation files(jar)
+    // 👇 Include local jars in the 'libs' directory
+    flatDir {
+        dirs 'libs'
     }
 }
 
-loom {
-    splitEnvironmentSourceSets()
+dependencies {
+    // Core Minecraft + Fabric
+    minecraft "com.mojang:minecraft:1.20.1"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:0.15.11"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.90.7+1.20.1"
 
+    // Local dependencies (from libs folder)
+    modImplementation files('libs/levelz-1.4.13.jar')
+    modImplementation files('libs/libz-1.0.3.jar')
+}
+
+
+loom {
     runs {
         client {
             client()
             setConfigName("Fabric Client")
             ideConfigGenerated(true)
-        }
-        server {
-            server()
-            setConfigName("Fabric Server")
-            ideConfigGenerated(true)
+            runDir("run")
         }
     }
 }
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(project.java_version.toInteger())
+        languageVersion = JavaLanguageVersion.of(17)
     }
     withSourcesJar()
 }
 
-tasks.withType(JavaCompile).configureEach {
-    it.options.encoding = "UTF-8"
-    it.options.release = project.java_version.toInteger()
-}
-
-processResources {
-    inputs.property "version", project.version
-    filesMatching("fabric.mod.json") {
-        expand "version": project.version
-    }
-}
-
 jar {
-    from("LICENSE") {
-        rename { "${it}_${project.archivesBaseName}" }
-    }
+    from("LICENSE")
 }
