@@ -3,8 +3,8 @@
   "id": "levelz_advancements",
   "version": "1.0.0",
   "name": "LevelZ Advancements",
-  "description": "Integrates LevelZ progression with Minecraft advancements.",
-  "authors": ["Alex Kisch"],
+  "description": "Integrates LevelZ skill progression with Minecraft advancements.",
+  "authors": ["alexkisch"],
   "contact": {
     "sources": "https://github.com/alexkisch/level-z---Advancements"
   },
@@ -12,16 +12,12 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.alexkisch.levelz_advancements.LevelZAdvancements"
+      "com.alexkisch.levelz_advancements.LevelZAdvancementsMod"
     ]
   },
   "depends": {
-    "fabricloader": ">=0.15.11",
-    "fabric-api": ">=0.90.7+1.20.1",
-    "levelz": ">=1.4.13",
-    "libz": ">=1.0.3",
-    "architectury": ">=9.2.14",
-    "cloth-config": ">=11.1.118",
-    "minecraft": "1.20.1"
+    "fabricloader": ">=0.14.0",
+    "minecraft": ">=1.20.1",
+    "java": ">=17"
   }
 }

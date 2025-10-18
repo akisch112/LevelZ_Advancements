@@ -11,25 +11,30 @@ repositories {
     mavenCentral()
     maven { url "https://maven.fabricmc.net/" }
     maven { url "https://api.modrinth.com/maven" }
+    maven { url "https://maven.terraformersmc.com/releases" }
 
-    // 👇 Include local jars in the 'libs' directory
+    // Local JARs (LevelZ + LibZ)
     flatDir {
         dirs 'libs'
     }
 }
 
 dependencies {
-    // Core Minecraft + Fabric
+    // Minecraft + Yarn mappings
     minecraft "com.mojang:minecraft:1.20.1"
-    mappings loom.officialMojangMappings()
+    mappings "net.fabricmc:yarn:1.20.1+build.10:v2"
+
+    // Fabric loader & API
     modImplementation "net.fabricmc:fabric-loader:0.15.11"
     modImplementation "net.fabricmc.fabric-api:fabric-api:0.90.7+1.20.1"
 
-    // Local dependencies (from libs folder)
+    // Local mod dependencies
     modImplementation files('libs/levelz-1.4.13.jar')
     modImplementation files('libs/libz-1.0.3.jar')
-}
 
+    // Gson for JSON parsing
+    implementation 'com.google.code.gson:gson:2.10.1'
+}
 
 loom {
     runs {
@@ -39,16 +44,111 @@ loom {
             ideConfigGenerated(true)
             runDir("run")
         }
+        server {
+            server()
+            setConfigName("Fabric Server")
+            ideConfigGenerated(true)
+            runDir("run-server")
+        }
     }
 }
+
+// --- Java version settings ---
+def javaVersionInt = java_version.toInteger()
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(javaVersionInt)
     }
-    withSourcesJar()
 }
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = javaVersionInt
+}
+
+sourceCompatibility = JavaVersion.toVersion(javaVersionInt)
+targetCompatibility = JavaVersion.toVersion(javaVersionInt)
+
 
 jar {
     from("LICENSE")
+    manifest {
+        attributes(
+            'Implementation-Title': project.archivesBaseName,
+            'Implementation-Version': project.version,
+            'Implementation-Vendor': 'Alex Kisch'
+        )
+    }
 }
+
+// Define where the mods folder is on your system
+def modsFolderPath = "${System.properties['user.home']}/Library/Application Support/minecraft/mods"
+
+// Custom task to dump advancements
+tasks.register('dumpAdvancements', JavaExec) {
+    group = "levelz"
+    description = "Generate levelz_advancements.json from vanilla + mods"
+    mainClass.set("com.alexkisch.levelz_advancements.AdvancementDumper")
+    classpath = sourceSets.main.runtimeClasspath
+
+    // Point to Minecraft jar file via Loom internals
+    doFirst {
+        def mcJar = configurations.named("minecraftLibraries").get().files.find { it.name.contains("client") || it.name.contains("minecraft") }
+        if (mcJar == null) {
+            throw new GradleException("Could not locate Minecraft jar from Loom.")
+        }
+        println "Using Minecraft jar: $mcJar"
+        println "Using mods folder: $modsFolderPath"
+        args mcJar.absolutePath, modsFolderPath
+    }
+
+    inputs.dir(modsFolderPath)
+    outputs.file("$buildDir/levelz_advancements.json")
+}
+
+// Watch task (optional for auto-generation)
+tasks.register('watchAdvancements') {
+    group = "levelz"
+    description = "Watches mods folder and regenerates advancements on changes"
+
+    doLast {
+        println "Watching $modsFolderPath for changes... (Ctrl+C to stop)"
+        def watcher = java.nio.file.FileSystems.default.newWatchService()
+        def path = java.nio.file.Paths.get(modsFolderPath)
+        path.register(watcher, java.nio.file.StandardWatchEventKinds.ENTRY_CREATE, java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY)
+
+        while (true) {
+            def key = watcher.take()
+            key.pollEvents().each {
+                println "Change detected: ${it.context()}"
+                gradle.startParameter.setTaskNames(["dumpAdvancements"])
+                gradle.run()
+            }
+            key.reset()
+        }
+    }
+}
+
+// Auto-copy JAR to Minecraft mods folder after build
+tasks.register('copyToMods') {
+    group = "build"
+    description = "Copies built mod JAR to Minecraft mods folder"
+
+    dependsOn tasks.build
+
+    doLast {
+        def jarFile = file("${buildDir}/libs/${archivesBaseName}-${version}.jar")
+        def destDir = file(modsFolderPath)
+        if (!destDir.exists()) {
+            destDir.mkdirs()
+        }
+        copy {
+            from jarFile
+            into destDir
+        }
+        println "✅ Copied ${jarFile.name} to $modsFolderPath"
+    }
+}
+
+// Make copyToMods run automatically after build
+build.finalizedBy(copyToMods)
